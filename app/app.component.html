@@ -1,0 +1,11 @@
+<form [formGroup]="myForm">
+  <custom-input [form]="myForm" controlName="name" [submitted]="submitted" [failingFields]="backendErrors" fieldCode="1"></custom-input><br/>
+  <custom-input [form]="myForm" controlName="email" [submitted]="submitted" [failingFields]="backendErrors" fieldCode="2"></custom-input><br/>
+  <custom-input [form]="myForm" controlName="phone" [submitted]="submitted" [failingFields]="backendErrors" fieldCode="3"></custom-input><br/><br/>
+  <button type="submit" (click)="submitted=true && backendErrors=[]">Submit Succes</button><br/><br/>
+  <button type="submit" (click)="sendToBackendThatFails()">Submit With Backend Errors</button>
+</form>
+
+<br/><br/><br/>
+Form Value : {{   myForm.value | json }}<br/>
+Submited : {{ submitted }}<br/>
